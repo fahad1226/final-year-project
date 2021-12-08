@@ -15,13 +15,13 @@ class CreateToDosTable extends Migration
     {
         Schema::create('to_dos', function (Blueprint $table) {
             $table->id();
-            $table->integer('project_id');
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('title');
             $table->date('due_date');
-            $table->integer('assigned_to');
+            $table->foreignId('assigned_to')->constrained('users');
             $table->text('description');
             $table->string('screenshot');
-            $table->integer('tag_id');
+            $table->foreignId('tag_id')->constrained('tags');
             $table->boolean('isCompleted');
             $table->timestamps();
         });
