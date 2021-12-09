@@ -17,3 +17,4 @@ to_dos	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
 users	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
 working_ons	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
 17 tables	16	InnoDB	latin1_swedish_ci	800 KiB	0 B
+checking : 1
