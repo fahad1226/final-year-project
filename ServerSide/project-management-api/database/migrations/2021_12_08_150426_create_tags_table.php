@@ -15,6 +15,10 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
+             $table->string('slug');
+            $table->string('tag_name');
+              $table->string('tag_color');
             $table->timestamps();
         });
     }

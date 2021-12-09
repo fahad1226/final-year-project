@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cancelled extends Model
+class Pending_task extends Model
 {
-    protected $fillable = [
-        'prjoect_id',
+    protected $fillable=[
+        'project_id',
         'title',
         'due_date',
         'description',

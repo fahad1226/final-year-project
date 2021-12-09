@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTasksTable extends Migration
+class CreateToDosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('to_dos', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 200);
+            $table->foreignId('project_id')->constrained('projects');
+            $table->string('title');
             $table->date('due_date');
-            $table->unsignedBigInteger('tag_id');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->string('slug');
+            $table->foreignId('assigned_to')->constrained('users');
             $table->text('description');
-            $table->unsignedBigInteger('assigned_to');
-            $table->foreign('assigned_to')->constrained()->references('id')->on('users')->onDelete('cascade');
+            $table->string('screenshot');
+            $table->foreignId('tag_id')->constrained('tags');
+            $table->boolean('isCompleted');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('to_dos');
     }
 }

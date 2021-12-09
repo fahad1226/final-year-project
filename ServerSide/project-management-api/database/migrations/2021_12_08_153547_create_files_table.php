@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCancelledsTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateCancelledsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cancelleds', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
+            $table->string('filename');
+            $table->foreignId('project_id')->constrained('projects');
+            $table->string('file');
+            $table->string('slug'); 
+            $table->foreignId('owener_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateCancelledsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cancelleds');
+        Schema::dropIfExists('files');
     }
 }

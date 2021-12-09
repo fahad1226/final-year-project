@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkingOnsTable extends Migration
+class CreateDiscussionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateWorkingOnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('working__ons', function (Blueprint $table) {
+        Schema::create('discussions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('title');
-            $table->date('dute_date');
             $table->text('description');
-            $table->boolean('isCompleted');
-            $table->unsignedBigInteger('assigned_to');
-            $table->foreign('assigned_to')->constrained()->references('id')->on('users')->onDelete('cascade');
+            $table->string('slug');
+            $table->string('image');
+            $table->foreignId('member_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateWorkingOnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('working__ons');
+        Schema::dropIfExists('discussions');
     }
 }

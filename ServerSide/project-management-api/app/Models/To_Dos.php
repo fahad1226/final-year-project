@@ -5,22 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Completed extends Model
+class To_Dos extends Model
 {
-
-    use HasFactory;
-
     protected $fillable=[
         'project_id',
         'title',
-        'due_date',
-        'assigned_to',
-        'slug',
-        'description',
-        'screenshot',
+        'due_date','assigned_to','description','screenshot','slug',
         'tag_id',
         'isCompleted'
     ];
-
-
 }

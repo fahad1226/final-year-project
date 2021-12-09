@@ -1,0 +1,19 @@
+Initial Tables in the Project are
+activities	0	InnoDB	utf8mb4_unicode_ci	176 KiB	-
+cancelleds	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
+categories	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+completeds	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
+discussions	0	InnoDB	utf8mb4_unicode_ci	48 KiB	-
+failed_jobs	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+files	0	InnoDB	utf8mb4_unicode_ci	48 KiB	-
+migrations	16	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+password_resets	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+pending_tasks	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
+personal_access_tokens	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+posts	0	InnoDB	utf8mb4_unicode_ci	48 KiB	-
+projects	0	InnoDB	utf8mb4_unicode_ci	32 KiB	-
+tags	0	InnoDB	utf8mb4_unicode_ci	32 KiB	-
+to_dos	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
+users	0	InnoDB	utf8mb4_unicode_ci	16 KiB	-
+working_ons	0	InnoDB	utf8mb4_unicode_ci	64 KiB	-
+17 tables	16	InnoDB	latin1_swedish_ci	800 KiB	0 B

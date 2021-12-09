@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
-    use HasFactory;
+    protected $fillable=[
+        'filename',
+        'project_id',
+        'file',
+        'slug',
+        'owener_id'
+    ];
+
 }
