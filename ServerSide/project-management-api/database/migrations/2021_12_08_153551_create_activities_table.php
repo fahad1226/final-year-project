@@ -25,6 +25,7 @@ class CreateActivitiesTable extends Migration
             $table->foreignId('discussion_id')->constrained('discussions');
             $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('tag_id')->constrained('tags');
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateToDosTable extends Migration
             $table->foreignId('project_id')->constrained('projects');
             $table->string('title');
             $table->date('due_date');
+            $table->string('slug');
             $table->foreignId('assigned_to')->constrained('users');
             $table->text('description');
             $table->string('screenshot');

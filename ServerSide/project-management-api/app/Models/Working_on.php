@@ -12,7 +12,7 @@ class Working_on extends Model
         'title',
         'due_date',
         'description',
-        'assigned_to',
+        'assigned_to','slug',
         'screenshot',
         'tag_id',
         'isCompleted'

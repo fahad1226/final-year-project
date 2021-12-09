@@ -14,6 +14,7 @@ class Pending_task extends Model
         'description',
         'assigned_to',
         'screenshot',
+        'slug',
         'tag_id',
         'isCompleted'
     ];

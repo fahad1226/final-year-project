@@ -11,6 +11,7 @@ class File extends Model
         'filename',
         'project_id',
         'file',
+        'slug',
         'owener_id'
     ];
 

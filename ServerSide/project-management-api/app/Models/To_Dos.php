@@ -10,7 +10,7 @@ class To_Dos extends Model
     protected $fillable=[
         'project_id',
         'title',
-        'due_date','assigned_to','description','screenshot',
+        'due_date','assigned_to','description','screenshot','slug',
         'tag_id',
         'isCompleted'
     ];

@@ -12,6 +12,7 @@ class Completed extends Model
         'title',
         'due_date',
         'assigned_to',
+        'slug',
         'description',
         'screenshot',
         'tag_id',

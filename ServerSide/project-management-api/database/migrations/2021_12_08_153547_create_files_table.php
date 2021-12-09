@@ -18,6 +18,7 @@ class CreateFilesTable extends Migration
             $table->string('filename');
             $table->foreignId('project_id')->constrained('projects');
             $table->string('file');
+            $table->string('slug'); 
             $table->foreignId('owener_id')->constrained('users');
             $table->timestamps();
         });

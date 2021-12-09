@@ -15,6 +15,7 @@ class Activity extends Model
         'cancelled_id',
         'post_id',
         'user_id',
+        'slug',
         'discussion_id',
         'category_id',
         'tag_id'

@@ -19,6 +19,7 @@ class CreatePendingTasksTable extends Migration
             $table->string('title');
             $table->date('due_date');
             $table->text('description');
+             $table->string('slug');
             $table->foreignId('assigned_to')->constrained('users');
              $table->string('screenshot');
             $table->foreignId('tag_id')->constrained('tags');

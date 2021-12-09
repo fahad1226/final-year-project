@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-   protected $fillable=['project_id','tag_name','tag_color'];
+   protected $fillable=['project_id','tag_name','slug','tag_color'];
 }

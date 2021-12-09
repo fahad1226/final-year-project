@@ -12,6 +12,7 @@ class Discussion extends Model
         'title',
         'description',
         'image',
+        'slug',
         'member_id'
     ];
 }

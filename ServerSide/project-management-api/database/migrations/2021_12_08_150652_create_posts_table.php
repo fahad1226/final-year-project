@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('project_id')->constrained('projects');
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->string('image');
             $table->foreignId('member_id')->constrained('users');

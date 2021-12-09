@@ -18,6 +18,7 @@ class CreateDiscussionsTable extends Migration
             $table->foreignId('project_id')->constrained('projects');
             $table->string('title');
             $table->text('description');
+            $table->string('slug');
             $table->string('image');
             $table->foreignId('member_id')->constrained('users');
             $table->timestamps();

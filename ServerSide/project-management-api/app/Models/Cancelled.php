@@ -14,6 +14,7 @@ class Cancelled extends Model
         'description',
         'assigned_to',
         'screenshot',
+        'slug',
         'tag_id',
         'isCompleted'
     ];

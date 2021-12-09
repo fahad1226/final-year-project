@@ -10,6 +10,7 @@ class Category extends Model
     protected $fillable=[
         'project_id',
         'category_name',
+        'slug',
         
     ];
 }
