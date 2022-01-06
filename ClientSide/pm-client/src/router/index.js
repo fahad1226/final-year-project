@@ -7,6 +7,7 @@ import Landing from "@/components/landings/Landing.vue";
 import Login from "@/components/users/SignIn.vue";
 import Pricing from '@/components/landings/Pricing.vue';
 import SignUp from "@/components/users/SignUp.vue";
+import Overview from '@/components/dashboard/activities/Overview.vue';
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -47,11 +48,11 @@ const routes = [
     },
     {
         path: '/company/bigfat/overview',
-        name: 'OverView',
-        component: OverView,
+        name: 'Overview',
+        component: Overview,
     },
     {
-        path: "/compnay/bigfat/project/heyshot/activity",
+        path: "/compnay/bigfat/project/activity",
         name: "Activity",
         component: Activity,
     },

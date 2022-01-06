@@ -1,5 +1,5 @@
 <template>
-    <Activities />
+    <Activities title="Project Overeview" />
 </template>
 
 <script>

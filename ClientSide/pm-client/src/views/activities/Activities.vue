@@ -1,9 +1,10 @@
 <template>
     <div class="bg-gray-50 min-h-screen">
         <div class="flex justify-center py-12 px-6">
-            <div class="w-5/6 rounded shadow">
-                <table class="w-full">
-                    <h1 class="text-4xl pb-3 text-re">Project Activities</h1>
+        
+            <div class="w-5/6 rounded">
+                <h1 class="text-4xl pb-8">{{ title }}</h1>
+                <table class="w-full pt-20">
                     <tbody class="bg-white dark:bg-gray-800">
                         <tr
                             class="border-b border-gray-200 dark:border-gray-900"
@@ -111,6 +112,7 @@
 <script>
 export default {
     name: "Activities",
+    props: ['title']
 
 };
 </script>
