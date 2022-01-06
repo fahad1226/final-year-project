@@ -7,7 +7,10 @@
                         <div class="py-2 text-color">
                             <h1
                                 class="text-2xl lg:text-6xl md:leading-snug tracking-tighter f-f-l font-black"
-                            >Boost adoption of product and services</h1>
+                            >
+                                Teamwork,
+                                <span class="text-indigo-800">made simple</span>
+                            </h1>
                             <h2
                                 class="text-lg lg:text-3xl lg:leading-7 md:leading-10 f-f-r py-4 md:py-8"
                             >Here at Globex we take special care of what your organization needs instead of selling you a mass market tool that takes a one size fits all approach. I personally review each and every client business and oversee the team that tailores a solution</h2>
@@ -120,7 +123,10 @@
                         <div class="py-2 text-color">
                             <h1
                                 class="text-2xl lg:text-6xl tracking-tighter md:leading-snug f-f-l font-black"
-                            >Easily manage sales through our invoicing system</h1>
+                            >
+                                Easily manage
+                                <span class="text-indigo-800">projects</span> through our simple project management system
+                            </h1>
                             <h2
                                 class="text-lg lg:text-3xl leading-7 md:leading-10 f-f-r py-8"
                             >Here at Globex we take special care of what your organization needs instead of selling you a mass market tool that takes a one size fits all approach. I personally review each and every client business and oversee the team that tailores a solution</h2>

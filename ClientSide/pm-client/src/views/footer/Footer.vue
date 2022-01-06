@@ -1,6 +1,6 @@
 <template>
     <div class="bg-linear-pink-invert pb-12">
-        <div class="mx-auto container pt-20 lg:pt-72 flex flex-col items-center justify-center">
+        <div class="mx-auto container pt-8 lg:pt-20 flex flex-col items-center justify-center">
             <div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

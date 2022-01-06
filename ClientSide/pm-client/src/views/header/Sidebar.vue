@@ -1,6 +1,5 @@
 <template>
 <body class="overflow-x-hidden overflow-y-hidden bg-gray-50" style="min-height: 825px">
-   
     <div
         id="Main"
         class="bg-white transform xl:translate-x-0 ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-72 flex-col h-full"
@@ -62,7 +61,7 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <p class="text-base leading-4">Dashboard</p>
+                <p class="text-base leading-4">Home</p>
             </button>
             <button
                 class="focus:outline-none flex jusitfy-start hover:text-white focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 items-center w-full space-x-6"
@@ -89,7 +88,7 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <p class="text-base leading-4">Email</p>
+                <p class="text-base leading-4">My Activity</p>
             </button>
             <button
                 class="focus:outline-none flex justify-start items-center space-x-6 hover:text-white focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 w-full"
@@ -130,7 +129,7 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <p class="text-base leading-4">Security</p>
+                <p class="text-base leading-4">My Todos</p>
             </button>
             <button
                 class="flex justify-start items-center space-x-6 hover:text-white focus:outline-none focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 w-full"
@@ -164,7 +163,7 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <p class="text-base leading-4">Goals</p>
+                <p class="text-base leading-4">Calendar</p>
             </button>
         </div>
         <div class="w-full px-4">
@@ -196,82 +195,6 @@
                     <div class="ml-28 p-1 bg-indigo-700 rounded-full"></div>
                 </div>
             </button>
-            <button
-                class="focus:outline-none flex justify-start items-center space-x-6 hover:text-white focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 w-full"
-            >
-                <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M14 8C15.1046 8 16 7.10457 16 6C16 4.89543 15.1046 4 14 4C12.8954 4 12 4.89543 12 6C12 7.10457 12.8954 8 14 8Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M4 6H12"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M16 6H20"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M8 14C9.10457 14 10 13.1046 10 12C10 10.8954 9.10457 10 8 10C6.89543 10 6 10.8954 6 12C6 13.1046 6.89543 14 8 14Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M4 12H6"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M10 12H20"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M17 20C18.1046 20 19 19.1046 19 18C19 16.8954 18.1046 16 17 16C15.8954 16 15 16.8954 15 18C15 19.1046 15.8954 20 17 20Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M4 18H15"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M19 18H20"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-                <p class="text-base leading-4">Settings</p>
-            </button>
         </div>
         <div class="w-full px-4">
             <hr class="border-gray-100 w-full" />
@@ -302,7 +225,18 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <p class="text-base leading-4">Notifications</p>
+                <p class="text-base leading-4">Projects</p>
+            </button>
+
+            <button
+                class="focus:outline-none flex justify-start items-center space-x-6 hover:text-white focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 w-full"
+            >
+                <p class="text-base leading-4">Heyshots</p>
+            </button>
+            <button
+                class="focus:outline-none flex justify-start items-center space-x-6 hover:text-white focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-gray-600 rounded py-3 pl-4 w-full"
+            >
+                <p class="text-base leading-4">Track My LTD.</p>
             </button>
         </div>
         <div
@@ -312,8 +246,8 @@
                 <img src="https://i.ibb.co/fxrbS6p/Ellipse-2-2.png" alt="avatar" />
             </div>
             <div class="flex flex-col justify-start items-start space-y-2">
-                <p class="cursor-pointer text-base leading-4 text-white">Alexis Enache</p>
-                <p class="cursor-pointer text-xs leading-3 text-gray-200">alexis _enache@gmail.com</p>
+                <p class="cursor-pointer text-base leading-4 text-white">Fahad Bin Munir</p>
+                <p class="cursor-pointer text-xs leading-3 text-gray-200">fahadmunir@gmail.com</p>
             </div>
             <button
                 aria-label="visit"
@@ -355,55 +289,5 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
 
-        }
-    },
-    mounted() {
-        let icon1 = document.getElementById("icon1");
-        let menu1 = document.getElementById("menu1");
-
-        let icon2 = document.getElementById("icon2");
-
-
-        let icon3 = document.getElementById("icon3");
-
-
-
-        let Main = document.getElementById("Main");
-        let open = document.getElementById("open");
-        let close = document.getElementById("close");
-
-
-
-    },
-    methods: {
-        showMenu1(flag) {
-            if (flag) {
-                icon1.classList.toggle("rotate-180");
-                menu1.classList.toggle("hidden");
-            }
-        },
-        showMenu2(flag) {
-            if (flag) {
-                icon2.classList.toggle("rotate-180");
-            }
-        },
-        showMenu3(flag) {
-            if (flag) {
-                icon3.classList.toggle("rotate-180");
-            }
-        },
-        showNav(flag) {
-            if (flag) {
-                Main.classList.toggle("-translate-x-full");
-                Main.classList.toggle("translate-x-0");
-                open.classList.toggle("hidden");
-                close.classList.toggle("hidden");
-            }
-        },
-    }
-}
 </script>
