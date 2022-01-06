@@ -37,7 +37,7 @@
                                 </li>
                                 <li
                                     class="xl:hidden flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center"
-                                    @click="dropdownHandler($event)"
+                                   
                                 >
                                     <div class="flex items-center">
                                         <svg

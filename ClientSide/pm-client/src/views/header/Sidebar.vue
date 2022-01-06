@@ -1,8 +1,8 @@
 <template>
-<body class="overflow-x-hidden overflow-y-hidden bg-gray-50" style="min-height: 825px">
+<body class="overflow-x-hidden overflow-y-hidden bg-gray-50">
     <div
         id="Main"
-        class="bg-white transform xl:translate-x-0 ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-72 flex-col h-full"
+        class="bg-white transform xl:translate-x-0 ease-in-out transition duration-500 flex justify-start items-start sm:w-72 flex-col"
     >
         <button
             class="hidden xl:flex text-gray-800 hover:text-black focus:outline-none focus:text-black justify-start px-6 pt-6 items-center space-x-3 w-full"
@@ -17,7 +17,7 @@
                 <input
                     type="text"
                     placeholder="Search"
-                    class="placeholder-gray-800 text-base placeholder-text-base leading-4 py-3 pl-8 w-full pl-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+                    class="placeholder-gray-800 text-base placeholder-text-base leading-4 py-3 w-full pl-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
                 />
                 <!-- <img class="absolute left-4" src="../svgs/sidebar6-svg4.svg" alt="search" /> -->
             </div>
@@ -238,56 +238,10 @@
             >
                 <p class="text-base leading-4">Track My LTD.</p>
             </button>
+            
         </div>
-        <div
-            class="mt-36 flex bg-indigo-700 justify-start space-x-2 items-center h-full py-4 px-3.5 w-full"
-        >
-            <div>
-                <img src="https://i.ibb.co/fxrbS6p/Ellipse-2-2.png" alt="avatar" />
-            </div>
-            <div class="flex flex-col justify-start items-start space-y-2">
-                <p class="cursor-pointer text-base leading-4 text-white">Fahad Bin Munir</p>
-                <p class="cursor-pointer text-xs leading-3 text-gray-200">fahadmunir@gmail.com</p>
-            </div>
-            <button
-                aria-label="visit"
-                class="focus:ring-2 focus:outline-none hover:bg-indigo-800 p-2.5 bg-indigo-600 rounded-full"
-            >
-                <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M4.16666 10H15.8333"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M10.8333 15L15.8333 10"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M10.8333 5L15.8333 10"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-            </button>
-        </div>
+       
     </div>
 </body>
 </template>
 
-<script>
-
-</script>
