@@ -1,13 +1,13 @@
 import Activity from "@/components/dashboard/activities/Activity.vue";
-import Dashboard from "@/components/dashboard/Dashboard.vue";
-import Todos from "@/components/dashboard/todos/TodoList.vue";
+import Overview from "@/components/dashboard/activities/Overview.vue";
+import TeacherDashboard from "@/components/dashboard/teachers/Dashboard.vue";
+import StudentDashboard from '@/components/dashboard/students/Dashboard.vue';
 import About from "@/components/landings/About.vue";
 import Feature from "@/components/landings/Feature.vue";
 import Landing from "@/components/landings/Landing.vue";
+import Pricing from "@/components/landings/Pricing.vue";
 import Login from "@/components/users/SignIn.vue";
-import Pricing from '@/components/landings/Pricing.vue';
 import SignUp from "@/components/users/SignUp.vue";
-import Overview from '@/components/dashboard/activities/Overview.vue';
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -42,25 +42,26 @@ const routes = [
         component: Pricing,
     },
     {
-        path: "/dashboard",
-        name: "Dashboard",
-        component: Dashboard,
+        path: "/teacher/dashboard",
+        name: "teacherDashboard",
+        component: TeacherDashboard,
     },
     {
-        path: '/company/bigfat/overview',
-        name: 'Overview',
+        path: "/students/dashboard",
+        name: 'studentDashboard',
+        component: StudentDashboard,
+    },
+    {
+        path: "/overview",
+        name: "Overview",
         component: Overview,
     },
     {
-        path: "/compnay/bigfat/project/activity",
+        path: "/activity",
         name: "Activity",
         component: Activity,
     },
-    {
-        path: "/compnay/bigfat/project/heyshot/my-todo",
-        name: "Todos",
-        component: Todos,
-    },
+    
 ];
 
 const router = createRouter({
