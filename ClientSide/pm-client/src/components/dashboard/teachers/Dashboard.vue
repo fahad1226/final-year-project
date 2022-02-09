@@ -1,13 +1,15 @@
 <template>
     <Navbar />
     <Dashboard />
+    <Pagination />
 </template>
 
 <script>
-import Dashboard from '@/views/dashboard/teachers/Dashboard.vue'
+import Dashboard from '@/views/dashboard/teachers/Dashboard.vue';
+import Pagination from '@/views/footer/Pagination.vue';
 import Navbar from '@/views/header/Navbar.vue';
 export default {
     name: 'Dash',
-    components: { Dashboard, Navbar },
+    components: { Dashboard, Navbar, Pagination },
 }
 </script>

@@ -34,12 +34,12 @@
         <p
           tabindex="0"
           class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800"
-        >Supervisor's Section</p>
+        >Supervisor's Section (Anik Sen)</p>
         <div>
           <button
             class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
           >
-            <p class="text-sm font-medium leading-none text-white" @click="open = true">New Project</p>
+            <p class="text-sm font-medium leading-none text-white" @click="open = true">New Group</p>
           </button>
         </div>
       </div>
@@ -113,11 +113,6 @@
                   class="shadow-md w-8 h-8 rounded-full -ml-2"
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
-                />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
                 />
               </div>
             </td>
@@ -231,11 +226,6 @@
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
                 />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
-                />
               </div>
             </td>
             <td class="px-7 2xl:px-0">
@@ -347,11 +337,6 @@
                   class="shadow-md w-8 h-8 rounded-full -ml-2"
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
-                />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
                 />
               </div>
             </td>
@@ -465,11 +450,6 @@
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
                 />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
-                />
               </div>
             </td>
             <td class="px-7 2xl:px-0">
@@ -581,11 +561,6 @@
                   class="shadow-md w-8 h-8 rounded-full -ml-2"
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
-                />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
                 />
               </div>
             </td>
@@ -699,11 +674,6 @@
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
                 />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
-                />
               </div>
             </td>
             <td class="px-7 2xl:px-0">
@@ -815,11 +785,6 @@
                   class="shadow-md w-8 h-8 rounded-full -ml-2"
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
-                />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
                 />
               </div>
             </td>
@@ -933,11 +898,6 @@
                   src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                   alt="collaborator 3"
                 />
-                <img
-                  class="shadow-md w-8 h-8 rounded-full -ml-2"
-                  src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
-                  alt="collaborator 4"
-                />
               </div>
             </td>
             <td class="px-7 2xl:px-0">
@@ -1009,8 +969,7 @@ import EntryForm from "@/views/dashboard/Form.vue";
 import {
   Dialog,
   DialogOverlay,
-  DialogTitle, Menu, MenuButton, MenuItem, MenuItems, TransitionChild,
-  TransitionRoot
+  DialogTitle, Menu, MenuButton, MenuItem, MenuItems, TransitionChild, TransitionRoot
 } from "@headlessui/vue";
 export default {
   name: "component",
@@ -1032,9 +991,7 @@ export default {
       show: null
     };
   },
-  methods: {
-  },
-  mounted() { },
+
 };
 </script>
 

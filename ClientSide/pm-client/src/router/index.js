@@ -1,7 +1,9 @@
 import Activity from "@/components/dashboard/activities/Activity.vue";
 import Overview from "@/components/dashboard/activities/Overview.vue";
+import StudentDashboard from "@/components/dashboard/students/Dashboard.vue";
+import studentSection from "@/components/dashboard/students/StudentSection.vue";
 import TeacherDashboard from "@/components/dashboard/teachers/Dashboard.vue";
-import StudentDashboard from '@/components/dashboard/students/Dashboard.vue';
+import TeachersTask from "@/components/dashboard/teachers/TeachersTask.vue";
 import About from "@/components/landings/About.vue";
 import Feature from "@/components/landings/Feature.vue";
 import Landing from "@/components/landings/Landing.vue";
@@ -42,14 +44,24 @@ const routes = [
         component: Pricing,
     },
     {
-        path: "/teacher/dashboard",
-        name: "teacherDashboard",
+        path: "/teachers/section/:teacherId",
+        name: "teachersSection",
         component: TeacherDashboard,
     },
     {
+        path: "/teachers/section/:teacherId/:groupId",
+        name: "teachersTask",
+        component: TeachersTask,
+    },
+    {
         path: "/students/dashboard",
-        name: 'studentDashboard',
+        name: "studentDashboard",
         component: StudentDashboard,
+    },
+    {
+        path: "/students/section/:groupId",
+        name: "studentSection",
+        component: studentSection,
     },
     {
         path: "/overview",
@@ -61,7 +73,6 @@ const routes = [
         name: "Activity",
         component: Activity,
     },
-    
 ];
 
 const router = createRouter({

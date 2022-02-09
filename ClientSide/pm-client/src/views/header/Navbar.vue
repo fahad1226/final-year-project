@@ -37,7 +37,6 @@
                                 </li>
                                 <li
                                     class="xl:hidden flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center"
-                                   
                                 >
                                     <div class="flex items-center">
                                         <svg
@@ -57,7 +56,7 @@
                                                 d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"
                                             />
                                         </svg>
-                                        <span class="ml-2 font-bold">Products</span>
+                                        <span class="ml-2 font-bold">Products!!</span>
                                     </div>
                                 </li>
                                 <li
@@ -226,7 +225,7 @@
                         </svg>
                         <h2
                             class="hidden sm:block text-base text-gray-700 font-bold leading-normal pl-3"
-                        >The North</h2>
+                        >Supervision</h2>
                     </div>
                 </div>
                 <div class="flex">
@@ -258,8 +257,8 @@
                             Dashboard
                         </a>
                         <a
-                            href="javascript: void(0)"
-                            class="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
+                            @click="this.$router.push({ name: 'studentDashboard' })"
+                            class="flex cursor-pointer px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
                         >
                             <span class="mr-2">
                                 <svg
@@ -280,10 +279,10 @@
                                     />
                                 </svg>
                             </span>
-                            Products
+                            Students's dashboard
                         </a>
-                        <a
-                            href="javascript: void(0)"
+                        <router-link
+                            :to="{ name: 'studentSection', params: { groupId: 123 } }"
                             class="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
                         >
                             <span class="mr-2">
@@ -304,8 +303,8 @@
                                     <circle cx="12" cy="12" r="9" />
                                 </svg>
                             </span>
-                            Performance
-                        </a>
+                            Your Section
+                        </router-link>
                         <a
                             href="javascript: void(0)"
                             class="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
@@ -459,7 +458,7 @@ export default {
     name: "LightWithButton",
     data() {
         return {
-            profilePhoto: "https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_1.png",
+            profilePhoto: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
         };
     },
     methods: {
