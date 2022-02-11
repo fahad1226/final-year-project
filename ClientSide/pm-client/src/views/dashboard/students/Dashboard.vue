@@ -1,50 +1,6 @@
 <template>
-    <TransitionRoot as="template" :show="open" class="bg-gray-900 bg-opacity-50">
-        <Dialog
-            as="div"
-            static
-            class="fixed inset-0 overflow-hidden"
-            @close="open = false"
-            :open="open"
-        >
-            <div class="absolute inset-0 overflow-hidden">
-                <DialogOverlay class="absolute inset-0" />
-
-                <div class="fixed inset-y-0 top-6 bottom-14 right-0 max-w-full flex">
-                    <TransitionChild
-                        as="template"
-                        enter="transform transition ease-in-out duration-500 sm:duration-700"
-                        enter-from="translate-x-full"
-                        enter-to="translate-x-0"
-                        leave="transform transition ease-in-out duration-500 sm:duration-700"
-                        leave-from="translate-x-0"
-                        leave-to="translate-x-full"
-                    >
-                        <div class="w-screen max-w-lg z-100">
-                            <form class="h-full flex flex-col rounded-lg bg-white shadow-xl">
-                                <div class="flex-1">
-                                    <NewIdea />
-                                </div>
-                            </form>
-                        </div>
-                    </TransitionChild>
-                </div>
-            </div>
-        </Dialog>
-    </TransitionRoot>
-    <div class="container mx-auto">
-        <h2 class="text-3xl text-center text-blue-700 font-bold pt-4">Student Dashboard</h2>
-
-        <div class="float-right">
-            <button
-                @click="open = true"
-                class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-            >Submit a New Idea</button>
-        </div>
-    </div>
-
     <h2
-        class="container mx-auto text-center pt-20 text-gray-500 font-semibold text-4xl"
+        class="container mx-auto text-center pt-6 text-gray-500 font-semibold text-4xl"
     >List of ideas submited by students</h2>
 
     <div class="lg:flex items-center justify-cente lg:px-0 px-4">
@@ -298,35 +254,11 @@
 
 
 <script>
-import {
-    Dialog,
-    DialogOverlay,
-    DialogTitle, Menu, MenuButton, MenuItem, MenuItems, TransitionChild,
-    TransitionRoot
-} from "@headlessui/vue";
-import { ref } from 'vue';
-import NewIdea from './NewIdea.vue';
+
 export default {
     name: 'StudentDashboard',
-    components: {
-        Dialog,
-        DialogOverlay,
-        DialogTitle,
-        TransitionChild,
-        TransitionRoot,
-        Menu,
-        MenuButton,
-        MenuItems,
-        MenuItem,
-        NewIdea
-    },
-    setup() {
-        let open = ref(false);
 
-        return {
-            open
-        }
-    }
+
 }
 </script>
 

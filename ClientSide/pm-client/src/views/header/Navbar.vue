@@ -230,32 +230,7 @@
                 </div>
                 <div class="flex">
                     <div class="hidden xl:flex md:mr-6 xl:mr-16">
-                        <a
-                            href="javascript: void(0)"
-                            class="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
-                        >
-                            <span class="mr-2">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-grid"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <rect x="4" y="4" width="6" height="6" rx="1" />
-                                    <rect x="14" y="4" width="6" height="6" rx="1" />
-                                    <rect x="4" y="14" width="6" height="6" rx="1" />
-                                    <rect x="14" y="14" width="6" height="6" rx="1" />
-                                </svg>
-                            </span>
-                            Dashboard
-                        </a>
+                       
                         <a
                             @click="this.$router.push({ name: 'studentDashboard' })"
                             class="flex cursor-pointer px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
@@ -279,7 +254,7 @@
                                     />
                                 </svg>
                             </span>
-                            Students's dashboard
+                            Dashboard
                         </a>
                         <router-link
                             :to="{ name: 'studentSection', params: { groupId: 123 } }"
