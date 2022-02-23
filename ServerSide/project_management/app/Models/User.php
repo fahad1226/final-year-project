@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -29,11 +30,16 @@ class User extends Authenticatable
     'name',
     'email',
     'phone',
+    'role',
     'website',
     'telegram',
     'password',
   ];
 
+    public function team() :BelongsTo
+    {
+      return $this->belongsTo(Team::class);
+    }
   /**
    * The attributes that should be hidden for arrays.
    *

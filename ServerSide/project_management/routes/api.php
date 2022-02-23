@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::middleware('apiRules')->group(function () {
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+    Route::middleware('auth:sanctum')->group( function () {
+        Route::post('/logout', [AuthController::class, 'logout']);
+        Route::get('/profile/view', [AuthController::class, 'show']);
+        Route::put('/profile/update', [AuthController::class, 'changeProfile']);
+        Route::apiResource('team',TeamController::class);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    });
 });

@@ -6,6 +6,7 @@ use Gate;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -22,6 +23,20 @@ class Controller extends BaseController
     public function checkPermissions(Array $permissions)
     {
         abort_if(Gate::none($permissions), 403);
+    }
+    
+    public function apiResponse(int $statusCode, string $statusMessage, $data = []): JsonResponse
+    {
+        $data['message'] = $statusMessage;
+        return response()->json($data, $statusCode);
+    }
+
+    public function apiResponseResourceCollection(int $statusCode, string $statusMessage, object $resourceCollection): JsonResponse
+    {
+        $resourceCollection = $resourceCollection->additional([
+            'message' => $statusMessage
+        ])->response()->getData();
+        return response()->json($resourceCollection, $statusCode);
     }
 
     public function putSL($collection)
