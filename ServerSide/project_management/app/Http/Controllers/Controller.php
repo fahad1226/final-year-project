@@ -17,12 +17,12 @@ class Controller extends BaseController
 
     public function checkPermission(String $permission)
     {
-        abort_if(Gate::denies($permission), 403);
+        abort_if(Gate::denies($permission), 403,'Unauthorised');
     }
 
     public function checkPermissions(Array $permissions)
     {
-        abort_if(Gate::none($permissions), 403);
+        abort_if(Gate::none($permissions), 403,'Unauthorised');
     }
     
     public function apiResponse(int $statusCode, string $statusMessage, $data = []): JsonResponse

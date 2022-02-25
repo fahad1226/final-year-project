@@ -42,6 +42,9 @@ class TeamController extends Controller
             'supervisor_id'=>'required|exists:users,id',
         ]);
         Team::create($input);
+        User::create([
+            ''
+        ])
         return $this->apiResponse(200,'Team created successfully');
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,8 @@ Route::middleware('apiRules')->group(function () {
         Route::get('/profile/view', [AuthController::class, 'show']);
         Route::put('/profile/update', [AuthController::class, 'changeProfile']);
         Route::apiResource('team',TeamController::class);
+        Route::apiResource('user',UserController::class);
+        Route::post('user/editProfile',[UserController::class,'editProfile']);
 
     });
 });

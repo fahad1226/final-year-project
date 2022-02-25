@@ -15,12 +15,15 @@ class UserController extends Controller
 
     public function create()
     {
-        //
+        dd('create');
     }
 
     public function store(Request $request)
     {
-        //
+       
+        
+         $this->checkPermission('user.create');
+         
     }
 
     public function show($id)
@@ -47,8 +50,13 @@ class UserController extends Controller
 
     public function editProfile()
     {
-        $this->checkPermission('profile.edit');
+       
+       $this->checkPermission('profile.edit');
+           
+        return $this->apiResponse(200,'ok');
+        
         $user = auth()->user();
+        
         return view('dashboard.user.edit-profile', compact('user'));
     }
 
