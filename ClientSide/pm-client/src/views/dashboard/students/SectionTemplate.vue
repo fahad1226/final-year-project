@@ -1,6 +1,10 @@
 <template>
     <div class="container mx-auto">
-        <TransitionRoot as="template" :show="open" class="bg-gray-900 bg-opacity-50">
+        <TransitionRoot
+            as="template"
+            :show="open"
+            class="bg-gray-900 bg-opacity-50"
+        >
             <Dialog
                 as="div"
                 static
@@ -11,7 +15,9 @@
                 <div class="absolute inset-0 overflow-hidden">
                     <DialogOverlay class="absolute inset-0" />
 
-                    <div class="fixed inset-y-0 top-6 bottom-14 right-0 max-w-full flex">
+                    <div
+                        class="fixed inset-y-0 top-6 bottom-14 right-0 max-w-full flex"
+                    >
                         <TransitionChild
                             as="template"
                             enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -22,7 +28,9 @@
                             leave-to="translate-x-full"
                         >
                             <div class="w-screen max-w-lg z-100">
-                                <form class="h-full flex flex-col rounded-lg bg-white shadow-xl">
+                                <form
+                                    class="h-full flex flex-col rounded-lg bg-white shadow-xl"
+                                >
                                     <div class="flex-1">
                                         <NewIdea />
                                     </div>
@@ -38,13 +46,17 @@
                 <button
                     @click="open = true"
                     class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-                >Submit a New Idea</button>
+                >
+                    Submit a New Idea
+                </button>
             </div>
         </div>
-        <h2 class="text-center text-4xl text-amber-400 font-mono pt-2">personal group section</h2>
-        <p
-            class="text-center font-thin text-red-700"
-        >this is the private section of each indiviudal group</p>
+        <h2 class="text-center text-4xl text-amber-400 font-mono pt-2">
+            personal group section
+        </h2>
+        <p class="text-center font-thin text-red-700">
+            this is the private section of each indiviudal group
+        </p>
         <div class="grid grid-rows-1 pt-4">
             <div class="grid grid-cols-3 gap-5">
                 <div class="col-start-1 col-span-2">
@@ -53,75 +65,143 @@
                         <span class="text-red-400">projects</span>
                         list
                     </h3>
+
                     <div class="w-full px-4 pt-6">
-                        <div class="w-full p-2 float-left mx-auto bg-white rounded-2xl">
+                        <div
+                            class="w-full p-2 float-left mx-auto bg-white rounded-2xl"
+                        >
                             <Disclosure v-slot="{ open }">
                                 <DisclosureButton
                                     class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                                 >
-                                    <h2 class="text-xl text-red-800 font-serif font-semibold">
+                                    <h2
+                                        class="text-xl text-red-800 font-serif font-semibold"
+                                    >
                                         Inventory Management System
                                         <span
                                             class="font-thin text-blue-500 text-sm"
-                                        >pending</span>
+                                            >pending</span
+                                        >
                                     </h2>
 
                                     <ChevronUpIcon
-                                        :class="open ? 'transform rotate-180' : ''"
+                                        :class="
+                                            open ? 'transform rotate-180' : ''
+                                        "
                                         class="w-5 h-5 text-gray-500"
                                     />
                                 </DisclosureButton>
                                 <DisclosurePanel
                                     class="px-4 pt-4 text-lg pb-2 font-medium text-gray-500"
-                                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, laborum! Libero quis est expedita eligendi blanditiis. Deleniti aliquam modi ad similique incidunt quis nam aut itaque, officiis nulla. Officiis culpa voluptatibus ducimus molestiae? Odit neque numquam, quia obcaecati quos assumenda?</DisclosurePanel>
+                                    >Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Eveniet, laborum! Libero
+                                    quis est expedita eligendi blanditiis.
+                                    Deleniti aliquam modi ad similique incidunt
+                                    quis nam aut itaque, officiis nulla.
+                                    Officiis culpa voluptatibus ducimus
+                                    molestiae? Odit neque numquam, quia
+                                    obcaecati quos assumenda?</DisclosurePanel
+                                >
                             </Disclosure>
                             <Disclosure as="div" class="mt-2" v-slot="{ open }">
                                 <DisclosureButton
                                     class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                                 >
-                                    <h2 class="text-xl text-red-800 font-serif font-semibold">
+                                    <h2
+                                        class="text-xl text-red-800 font-serif font-semibold"
+                                    >
                                         Face detection
                                         <span
                                             class="font-thin text-blue-500 text-sm"
-                                        >pending</span>
+                                            >pending</span
+                                        >
                                     </h2>
 
                                     <ChevronUpIcon
-                                        :class="open ? 'transform rotate-180' : ''"
+                                        :class="
+                                            open ? 'transform rotate-180' : ''
+                                        "
                                         class="w-5 h-5 text-gray-500"
                                     />
                                 </DisclosureButton>
                                 <DisclosurePanel
                                     class="px-4 pt-4 pb-2 text-lg font-medium text-gray-500"
                                 >
-                                    One of the best ideas to start experimenting you hands-on computer science projects for students is face detection software. This project focuses on building a face detection software using the OpenCV library. The face detection program will be modelled in a way that it can detect faces in live stream videos from webcam or video files stored in a PC’s local storage. The software uses pre-trained XML classifiers to detect faces in real-time and track them. You can also use different classifiers to identify various objects through this detection program.
-                                    To run this program, you need to install the OpenCV library on your local machine. Also, it would be best if you created appropriate paths for the XML classifier files before executing the program.
+                                    One of the best ideas to start experimenting
+                                    you hands-on computer science projects for
+                                    students is face detection software. This
+                                    project focuses on building a face detection
+                                    software using the OpenCV library. The face
+                                    detection program will be modelled in a way
+                                    that it can detect faces in live stream
+                                    videos from webcam or video files stored in
+                                    a PC’s local storage. The software uses
+                                    pre-trained XML classifiers to detect faces
+                                    in real-time and track them. You can also
+                                    use different classifiers to identify
+                                    various objects through this detection
+                                    program. To run this program, you need to
+                                    install the OpenCV library on your local
+                                    machine. Also, it would be best if you
+                                    created appropriate paths for the XML
+                                    classifier files before executing the
+                                    program.
                                 </DisclosurePanel>
                             </Disclosure>
                             <Disclosure as="div" class="mt-2" v-slot="{ open }">
                                 <DisclosureButton
                                     class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                                 >
-                                    <h2 class="text-xl text-red-800 font-serif font-semibold">
+                                    <h2
+                                        class="text-xl text-red-800 font-serif font-semibold"
+                                    >
                                         Online auction system
                                         <span
                                             class="font-thin text-green-500 text-sm"
-                                        >approved</span>
+                                            >approved</span
+                                        >
                                     </h2>
 
                                     <ChevronUpIcon
-                                        :class="open ? 'transform rotate-180' : ''"
+                                        :class="
+                                            open ? 'transform rotate-180' : ''
+                                        "
                                         class="w-5 h-5 text-gray-500"
                                     />
                                 </DisclosureButton>
                                 <DisclosurePanel
                                     class="px-4 pt-4 pb-2 text-lg font-medium text-gray-500"
                                 >
-                                    In an online auction, buyers and sellers engage in transactional business, wherein buyers purchase items through price bidding. Here, the bids have a starting price and an ending time. Potential buyers who place the highest bidding price for an item are declared the winners and owners of particular items.
-                                    In this project, you will create a secure online auction system using the fraud detection method with binary classification. If a user wants to buy a product through an online auction, they must provide their identification details like PAN number, email address, license number, etc. The system will then screen the users, authenticate, and authorize them. Only authorized users can bid in the auction. The system will be designed to predict fraudulent users in the early stages, thereby eliminating the risk of online fraud and scams. This beginner-level computer science projects will help build a strong foundation for fundamental programming concepts..
+                                    In an online auction, buyers and sellers
+                                    engage in transactional business, wherein
+                                    buyers purchase items through price bidding.
+                                    Here, the bids have a starting price and an
+                                    ending time. Potential buyers who place the
+                                    highest bidding price for an item are
+                                    declared the winners and owners of
+                                    particular items. In this project, you will
+                                    create a secure online auction system using
+                                    the fraud detection method with binary
+                                    classification. If a user wants to buy a
+                                    product through an online auction, they must
+                                    provide their identification details like
+                                    PAN number, email address, license number,
+                                    etc. The system will then screen the users,
+                                    authenticate, and authorize them. Only
+                                    authorized users can bid in the auction. The
+                                    system will be designed to predict
+                                    fraudulent users in the early stages,
+                                    thereby eliminating the risk of online fraud
+                                    and scams. This beginner-level computer
+                                    science projects will help build a strong
+                                    foundation for fundamental programming
+                                    concepts..
                                 </DisclosurePanel>
                             </Disclosure>
                         </div>
+                    </div>
+                    <div>
+                        <h2>Assign  a task</h2>
                     </div>
                 </div>
                 <div class="col-span-1">
@@ -134,7 +214,9 @@
                                 alt
                                 class="rounded-full object-cover h-10 w-10 shadow-md"
                             />
-                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">Fahad Bin Munir</h2>
+                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">
+                                Fahad Bin Munir
+                            </h2>
                         </li>
                         <li class="flex pt-5">
                             <img
@@ -142,7 +224,9 @@
                                 alt
                                 class="rounded-full object-cover h-10 w-10 shadow-md"
                             />
-                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">Ishmam Bin Azim</h2>
+                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">
+                                Ishmam Bin Azim
+                            </h2>
                         </li>
                         <li class="flex pt-5">
                             <img
@@ -150,7 +234,9 @@
                                 alt
                                 class="rounded-full object-cover h-10 w-10 shadow-md"
                             />
-                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">Sefat Tanzim</h2>
+                            <h2 class="text-3xl text-gray-700 pl-3 font-thin">
+                                Sefat Tanzim
+                            </h2>
                         </li>
                     </ul>
                     <div class="pt-10">
@@ -170,7 +256,9 @@
                             ></textarea>
                             <p
                                 class="w-full text-right text-xs pt-1 text-gray-500 dark:text-gray-400"
-                            >Character Limit: 200</p>
+                            >
+                                Character Limit: 200
+                            </p>
                         </div>
                         <div class="mt-4 flex flex-col w-full">
                             <input
@@ -183,7 +271,28 @@
                         </div>
                         <button
                             class="mt-4 justify-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-                        >Send</button>
+                        >
+                            Send
+                        </button>
+                    </div>
+                    <div class="pt-6">
+                        <h2
+                            class="text-lg font-semibold font-serif text-green-500"
+                        >
+                            Meeting history
+                        </h2>
+                        <p>
+                            Date:
+                            <span class="font-bold">11th February 2022</span>
+                        </p>
+                        <p>
+                            Date:
+                            <span class="font-bold">19th January 2022</span>
+                        </p>
+                        <p>
+                            Date:
+                            <span class="font-bold">11th December 2021</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -200,15 +309,22 @@
 import {
     Dialog,
     DialogOverlay,
-    DialogTitle, Disclosure,
-    DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, TransitionChild,
-    TransitionRoot
-} from '@headlessui/vue';
-import { ChevronUpIcon } from '@heroicons/vue/solid';
-import { ref } from 'vue';
-import NewIdea from './NewIdea.vue';
+    DialogTitle,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    TransitionChild,
+    TransitionRoot,
+} from "@headlessui/vue";
+import { ChevronUpIcon } from "@heroicons/vue/solid";
+import { ref } from "vue";
+import NewIdea from "./NewIdea.vue";
 export default {
-    name: 'section-template',
+    name: "section-template",
     components: {
         Dialog,
         DialogOverlay,
@@ -219,14 +335,17 @@ export default {
         MenuButton,
         MenuItems,
         MenuItem,
-        NewIdea, Disclosure, DisclosureButton, DisclosurePanel, ChevronUpIcon
+        NewIdea,
+        Disclosure,
+        DisclosureButton,
+        DisclosurePanel,
+        ChevronUpIcon,
     },
     setup() {
         let open = ref(false);
-
         return {
-            open
-        }
-    }
-}
+            open,
+        };
+    },
+};
 </script>

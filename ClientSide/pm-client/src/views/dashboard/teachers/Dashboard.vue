@@ -54,7 +54,7 @@
             <th class="font-normal text-left pl-4">Project</th>
             <th class="font-normal text-left pl-12">Progress</th>
             <th class="font-normal text-left pl-12">Tasks</th>
-            <th class="font-normal text-left pl-20">Budget</th>
+            <th class="font-normal text-left pl-20">Started At</th>
             <th class="font-normal text-left pl-20">Deadline</th>
             <th class="font-normal text-left pl-16">Members</th>
           </tr>
@@ -90,8 +90,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Dec 31 2021</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -202,8 +201,8 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Jan 02 2022</p>
+    
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -314,8 +313,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Feb 22, 2022</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -426,8 +424,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Feb 21 2022</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -538,8 +535,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">March 23 2021</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -650,8 +646,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">April 02 2021</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -762,8 +757,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Nov 03 2021</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
@@ -874,8 +868,7 @@
               <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
             </td>
             <td class="pl-20">
-              <p class="font-medium">$13,000</p>
-              <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              <p class="font-medium">Oct 23 2021</p>
             </td>
             <td class="pl-20">
               <p class="font-medium">22.12.21</p>
