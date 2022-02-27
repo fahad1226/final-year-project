@@ -76,6 +76,7 @@ class CoreDataSeeder extends Seeder
     {
         User::create([
             'name'              => 'admin',
+            'phone'             =>'01236547890',
             'email'             => 'admin@gmail.com',
             'email_verified_at' => now(),
             'password'          => Hash::make('123123123'),

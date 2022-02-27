@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjectRequest;
+use App\Models\Assignment;
 use Illuminate\Http\Request;
 
-class ProjectRequestController extends Controller
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ProjectRequestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ProjectRequest  $projectRequest
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(ProjectRequest $projectRequest)
+    public function show(Assignment $assignment)
     {
         //
     }
@@ -52,10 +52,10 @@ class ProjectRequestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProjectRequest  $projectRequest
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProjectRequest $projectRequest)
+    public function edit(Assignment $assignment)
     {
         //
     }
@@ -64,10 +64,10 @@ class ProjectRequestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProjectRequest  $projectRequest
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProjectRequest $projectRequest)
+    public function update(Request $request, Assignment $assignment)
     {
         //
     }
@@ -75,10 +75,10 @@ class ProjectRequestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProjectRequest  $projectRequest
+     * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProjectRequest $projectRequest)
+    public function destroy(Assignment $assignment)
     {
         //
     }

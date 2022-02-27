@@ -83,7 +83,6 @@ class AuthController extends Controller
             [
                 'old_password' => 'required|min:8',
                 'password' => 'required|min:8|confirmed',
-                'password_confirmation' => 'required|min:9',
             ],
         );
         // $data = $request->all();
@@ -118,9 +117,7 @@ class AuthController extends Controller
     }
 
     public function show()
-    {
-        $user = auth()->user();
-      
-        return $this->apiResponseResourceCollection(201, 'user profile');
+    { 
+        return UserResource::make(auth()->user());
     }
 }
