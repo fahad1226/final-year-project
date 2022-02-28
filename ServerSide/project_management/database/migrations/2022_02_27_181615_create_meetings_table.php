@@ -11,7 +11,7 @@ class CreateMeetingsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();

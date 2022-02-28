@@ -22,4 +22,16 @@ class Project extends Model
     {
         return $this->belongsTo(Team::class);
     }
+    public function assignment() :HasMany
+    {
+        return $this->hasMany(Assignment::class,'project_id');
+    }
+    public function comment() : HasMany
+    {
+        return $this->hasMany(Comment::class,'project_id');
+    }
+    public function meeting() : HasMany
+    {
+        return $this->hasMany(Meeting::class,'project_id');
+    }
 }
