@@ -28,7 +28,7 @@ class ProjectRequest extends FormRequest
             'details'   =>'required',
             'avatar'    =>'nullable|mimes:jpeg,png,jpg',
             'tag'       =>'required|array',
-            'deadline'  =>'required'
+            'deadline'  =>'nullable'
         ];
     }
 }

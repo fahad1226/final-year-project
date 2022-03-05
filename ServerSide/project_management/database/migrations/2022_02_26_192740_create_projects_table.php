@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->text('details');
-            $table->date('deadline');
+            $table->date('deadline')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

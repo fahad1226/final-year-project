@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TeamResource extends JsonResource
+class CommentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -13,12 +13,11 @@ class TeamResource extends JsonResource
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
-    {
-        $this->project->load('team');
+    {$this->load('user');
         return [
-            'Batch'         =>$this->batch,
-            'Members'       =>TeamUserResource::collection($this->teamUsers),
-            'Project'       =>ProjectResource::collection($this->whenLoaded('project'))
+            'Comment' =>$this->comment,
+            'Commented_at'  =>$this->created_at->diffForHumans() ,
+            'Commented_by'  =>$this->user->name
         ];
     }
 }

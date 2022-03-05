@@ -18,6 +18,7 @@ class CreateMeetingsTable extends Migration
             $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->string('details');
             $table->date('schedule');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

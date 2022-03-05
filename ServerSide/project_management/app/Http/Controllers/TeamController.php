@@ -19,7 +19,7 @@ class TeamController extends Controller
     public function index()
     {
         
-        $teams=Team::with('teamUsers')->paginate(10);
+        $teams=Team::with('teamUsers','project')->paginate(10);
         //dd($teams);
        return $this->apiResponseResourceCollection(200,'Team List',TeamResource::collection( $teams));
        
@@ -78,7 +78,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-       $team->load('teamUsers');
+   $team->load('teamUsers','teamSuperVisor','project');
         return $this->apiResponse(200,'Team List',TeamResource::make( $team));
     }
 

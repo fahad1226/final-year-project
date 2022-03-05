@@ -14,6 +14,7 @@ class Project extends Model
     const PENDING=0;
     const APPROVED=1;
     const REJECTED=2;
+    const COMPLETED=3;
     public function tag() : HasMany
     {
         return $this->hasMany(Tag::class,'project_id');
@@ -33,5 +34,9 @@ class Project extends Model
     public function meeting() : HasMany
     {
         return $this->hasMany(Meeting::class,'project_id');
+    }
+    public function supervisor() :BelongsTo
+    {
+        return $this->belongsTo(SupervisorProject::class,'project_id');
     }
 }

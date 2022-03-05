@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectProposalController;
+use App\Http\Controllers\SupervisorProjectController;
 use App\Http\Controllers\TeamController;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -31,5 +33,10 @@ Route::middleware('apiRules')->group(function () {
         Route::apiResource('user',UserController::class);
         Route::post('user/editProfile',[UserController::class,'editProfile']);
         Route::apiResource('project',ProjectController::class);
+        Route::put('project/status/{project}', [ProjectController::class, 'status']);
+        Route::get('project/user/list',[ProjectController::class,'userProjectList']);
+        Route::post('project/user/comment',[ProjectController::class,'comment']);
+        Route::apiResource('supervisor-project',SupervisorProjectController::class);
+        Route::apiResource('assignment',AssignmentController::class);
     });
 });

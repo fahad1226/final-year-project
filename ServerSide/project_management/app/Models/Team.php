@@ -16,7 +16,11 @@ class Team extends Model
     {
         return $this->hasMany(TeamUser::class);
     }
-    public function proposal() :HasMany
+     public function teamSuperVisor() :HasMany
+    {
+        return $this->hasMany(TeamUser::class);
+    }
+    public function project() :HasMany
     {
         return $this->hasMany(Project::class);
     }

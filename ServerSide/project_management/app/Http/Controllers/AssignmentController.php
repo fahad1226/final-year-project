@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AssignmentResource;
 use App\Models\Assignment;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,7 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -22,10 +25,7 @@ class AssignmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+  
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +35,17 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(auth()->user()->role==User::SUPERVISOR || auth()->user()->role==User::SUPERVISOR){
+             $request->validate([
+            'project_id'=>'required|exists:projects,id',
+            'details'   =>'required|string'
+        ]);
+        Assignment::create($request->all());
+        return $this->apiResponse(200,'New Assignment Added');
+        }
+        else
+        return $this->apiResponse(403,'Unauthorised!!');
+       
     }
 
     /**
@@ -46,7 +56,7 @@ class AssignmentController extends Controller
      */
     public function show(Assignment $assignment)
     {
-        //
+        return $this->apiResponse(200,'Details',AssignmentResource::make( $assignment));
     }
 
     /**
@@ -55,10 +65,7 @@ class AssignmentController extends Controller
      * @param  \App\Models\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Assignment $assignment)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +76,23 @@ class AssignmentController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
-        //
+         if(auth()->user()->role==User::SUPERVISOR || auth()->user()->role==User::SUPERVISOR){
+         if($request->status==1){
+        $assignment->update(['status'=>1]);
+         return $this->apiResponse(200,'Assignment Completed');
+    }
+       $input= $request->validate([
+            'project_id'=>'required|exists:projects,id',
+            'details'   =>'required|string'
+        ]);
+        if($request->status==1){ $input['status']=Assignment::APPROVED;$message='Assignment Completed';}
+        $assignment->update($input);
+        $message='Assignment Updated Succesfully';
+        return $this->apiResponse(200,$message);
+        }
+        else
+        return $this->apiResponse(403,'Unauthorised!!');
+
     }
 
     /**

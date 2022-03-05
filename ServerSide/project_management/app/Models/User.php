@@ -22,7 +22,9 @@ class User extends Authenticatable
   use Notifiable;
   use TwoFactorAuthenticatable;
   use HasRoles;
-
+  const ADMIN=0;
+  const SUPERVISOR=1;
+  const STUDENT=2;
   /**
    * The attributes that are mass assignable.
    *
@@ -41,6 +43,19 @@ class User extends Authenticatable
       public function teamUser() :HasOne
       {
         return $this->hasOne(TeamUser::class,'user_id');
+      }
+      public function teamSupervisor() :HasMany
+      {
+        return $this->hasMany(TeamUser::class,'user_id');
+      
+      }
+      public function supervisor() :HasMany
+      {
+        return $this->hasMany(SupervisorProject::class,'user_id');
+      }
+      public function comment() :HasMany
+      {
+        return $this->hasMany(Comment::class,'user_id');
       }
   /**
    * The attributes that should be hidden for arrays.

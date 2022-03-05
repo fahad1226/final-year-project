@@ -9,10 +9,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Comment extends Model
 {
     use HasFactory;
-    protected $fillable=['project_id','comment'];
+    protected $fillable=['project_id','user_id','comment'];
     public function project() : BelongsTo
     {
         return $this->belongsTo(Project::class);
+    }
+    public function user() :BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }
  
