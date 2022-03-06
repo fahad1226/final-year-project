@@ -65,4 +65,12 @@ class UserController extends Controller
         $this->checkPermission('profile.edit');
         return view('dashboard.user.change_password');
     }
+    public function student()
+    {
+        $users=User::where('role',User::STUDENT)->with('teamUser')->paginate(20);
+        $users->load('teamUser');
+      //  $users->whenLoaded('teamUser')->load('team');
+       // dd($users);
+        return view('dashboard.user.student',compact('users'));
+    }
 }

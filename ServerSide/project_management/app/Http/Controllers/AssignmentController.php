@@ -35,7 +35,7 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        if(auth()->user()->role==User::SUPERVISOR || auth()->user()->role==User::SUPERVISOR){
+        if(auth()->user()->role==User::SUPERVISOR){
              $request->validate([
             'project_id'=>'required|exists:projects,id',
             'details'   =>'required|string'
@@ -76,7 +76,7 @@ class AssignmentController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
-         if(auth()->user()->role==User::SUPERVISOR || auth()->user()->role==User::SUPERVISOR){
+         if(auth()->user()->role==User::SUPERVISOR){
          if($request->status==1){
         $assignment->update(['status'=>1]);
          return $this->apiResponse(200,'Assignment Completed');
@@ -102,7 +102,10 @@ class AssignmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Assignment $assignment)
-    {
-        //
+    {if(auth()->user()->role==User::SUPERVISOR){
+        $assignment->delete();
+        return $this->apiResponse(200,'Assignment Deleted');}
+         else
+        return $this->apiResponse(403,'Unauthorised!!');
     }
 }

@@ -15,6 +15,7 @@ Route::middleware('web')->group(function () {
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
     Route::view('/', 'dashboard.dashboard')->name('dashboard');
     Route::resource('user', UserController::class);
+    Route::get('student',[UserController::class,'student'])->name('student.list');
 
     Route::get('edit-profile', [UserController::class, 'editProfile'])->name('edit.profile');
     Route::get('change_password', [UserController::class, 'change_password'])->name('change_password');

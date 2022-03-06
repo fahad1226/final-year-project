@@ -39,6 +39,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        if(auth()->user()->role==User::SUPERVISOR){
          $team= Team::create([
              'batch'            =>$request->batch
          ]);
@@ -67,7 +68,9 @@ class TeamController extends Controller
              'user_type'=>TeamUser::SUPERVISOR
          ]);
      
-        return $this->apiResponse(200,'Team created successfully');
+        return $this->apiResponse(200,'Team created successfully');}
+         else
+        return $this->apiResponse(403,'Unauthorised!!');
     }
 
     /**
@@ -102,7 +105,28 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+         if(auth()->user()->role==User::SUPERVISOR){
+             $team->batch=$request->batch;
+             $team->update();
+         
+           foreach($request->user as $key=>$user)
+     {
+        $request->validate([
+            'user.'.$key.'.uid'    =>'required|unique:users,uid',
+            'user.'.$key.'.name'  =>'required|string',  
+            'user.'.$key.'.email'  =>'required|email|unique:users,email',
+            'user.'.$key.'.phone'  =>'required|string|unique:users,phone', 
+        ]);
+        $user['password']=Hash::make('123123123');
+        $student= User::create($user);
+        TeamUser::create([
+             'user_id'  =>$student->id,
+             'team_id'  =>$team->id,
+             'user_type'=>TeamUser::STUDENT
+         ]);
+        }
+     } else
+        return $this->apiResponse(403,'Unauthorised!!');
     }
 
     /**
@@ -113,6 +137,11 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+         if(auth()->user()->role==User::SUPERVISOR){
+        $team->delete();
+        return $this->apiResponse(200,'Team Data Deleted');
+        } else
+        return $this->apiResponse(403,'Unauthorised!!');
+    
     }
 }

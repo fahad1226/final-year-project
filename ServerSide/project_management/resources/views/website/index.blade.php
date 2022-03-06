@@ -16,16 +16,22 @@
   <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="container">
       <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="visually-hidden">(current)</span></a>
+        {{-- <a class="nav-item nav-link active" href="#">Home <span class="visually-hidden">(current)</span></a> --}}
         @guest
-          <a class="nav-item nav-link" href="{{ route('login') }}">Login</a>
+          {{-- <a class="nav-item nav-link" href="{{ route('login') }}">Login</a> --}}
           <a class="nav-item nav-link" href="{{ route('register') }}">Register</a>
+         
         @else
           <a class="nav-item nav-link" href="{{ route('dashboard') }}">Dashboard</a>
         @endguest
       </div>
     </div>
   </nav>
+  @guest
+     @include('auth.login')
+  @else
+  @include('dashboard.dashboard')
+  @endguest
 </body>
 
 </html>
