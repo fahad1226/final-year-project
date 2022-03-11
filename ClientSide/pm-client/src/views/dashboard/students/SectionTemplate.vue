@@ -40,7 +40,7 @@
       </Dialog>
     </TransitionRoot>
     <div class="container mx-auto">
-      <div class="float-right pt-10">
+      <div class="top-0 right-0 pt-10 md:mr-24">
         <button
           @click="open = true"
           class="
@@ -222,13 +222,14 @@
             </div>
           </div>
           <div>
-            <h2>Assign a task</h2>
+            <h2 class="text-center text-2xl">Task Assigned</h2>
+            <Task />
           </div>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 ml-28">
           <h1 class="text-2xl text-red-700 font-bold">Your Team</h1>
 
-          <ul class="pt-2">
+          <ul class="mt-6">
             <li class="flex list-disc">
               <img
                 src="https://cdn.tuk.dev/assets/photo-1564061170517-d3907caa96ea.jfif"
@@ -260,7 +261,7 @@
               </h2>
             </li>
           </ul>
-          <div class="pt-10">
+          <!-- <div class="pt-10">
             <h2 class="text-xl font-bold font-mono">
               Schedule a meeting with
               <span class="text-red-300">supervisor</span>
@@ -341,7 +342,7 @@
             >
               Send
             </button>
-          </div>
+          </div> -->
           <div class="pt-6">
             <h2 class="text-lg font-semibold font-serif text-green-500">
               Meeting history
@@ -387,6 +388,7 @@ import {
 } from "@headlessui/vue";
 import { ChevronUpIcon } from "@heroicons/vue/solid";
 import { ref } from "vue";
+import Task from "./Task.vue";
 import NewIdea from "./NewIdea.vue";
 export default {
   name: "section-template",
@@ -405,6 +407,7 @@ export default {
     DisclosureButton,
     DisclosurePanel,
     ChevronUpIcon,
+    Task,
   },
   setup() {
     let open = ref(false);
