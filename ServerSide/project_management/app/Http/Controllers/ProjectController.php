@@ -12,6 +12,7 @@ use App\Models\SupervisorProject;
 use App\Models\Tag;
 use App\Models\Team;
 use App\Models\TeamUser;
+use App\Notifications\ProjectNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,13 @@ class ProjectController extends Controller
        {
            Tag::create(['name'=>$tag,'project_id'=>$project->id]);
        }
+        $data = [
+            'url' => route('supervisor-project.index'),
+            'message' =>"New Project Request.",
+        ];
+        $superVisor=TeamUser::where('team_id', auth()->user()->teamUser->team_id)->where('user_type',TeamUser::SUPERVISOR)->first();
+        // dd($superVisor->user);
+        $superVisor->user->notify(new ProjectNotification($data));
        return $this->apiResponse(200, 'Project Proposal Submitted');
     }
     public function show(Project $project)

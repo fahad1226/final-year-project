@@ -27,7 +27,7 @@ class ProjectResource extends JsonResource
             'Title'         =>$this->name,
             'Details'       =>$this->details,
             'Avatar'        =>$this->avatar?$this->avatar:'N\A', 
-            'Progress'      =>($done*100)/$total.'%',
+            'Progress'      =>$total==0 ? '0%' :($done*100)/$total.'%',
             'Comment'       =>CommentResource::collection($this->whenLoaded('comment')),
             'Tag'           =>TagResource::collection($this->whenLoaded('tag')),
             'Status'        =>$this->status==Project::PENDING ?'Pending' : ($this->status==1 ? 'Accepted' :($this->status==Project::COMPLETED ? 'Completed':'Rejected')),
