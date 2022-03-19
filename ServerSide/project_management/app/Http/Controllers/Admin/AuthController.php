@@ -36,7 +36,8 @@ class AuthController extends Controller
         // dd($user);
         if (!$user || !Hash::check($input['password'], $user->password)) {
             return response()->json([
-                'message' => 'These credentials do not match our records.'
+                'message' => 'These credentials do not match our records.',
+                'success'=>false
             ], 404);
         }
 
@@ -44,7 +45,8 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => $user,
-            'token' => $token
+            'token' => $token,
+            'success'   =>true
         ], 201);
     }
 
