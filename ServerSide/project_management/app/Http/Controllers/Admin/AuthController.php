@@ -118,6 +118,6 @@ class AuthController extends Controller
 
     public function show()
     { 
-        return UserResource::make(auth()->user());
+        return $this->apiResponse(200,'User Details',UserResource::make(auth()->user()));
     }
 }
