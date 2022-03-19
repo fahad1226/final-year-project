@@ -97,6 +97,31 @@
         />
       </div>
 
+      <div class="mt-2">
+        <label for="tags" class="text-sm font-medium leading-none text-gray-800"
+          >Tags</label
+        >
+        <input
+          id="tags"
+          type="text"
+          class="
+            bg-gray-50
+            border
+            rounded
+            text-xs
+            font-medium
+            leading-none
+            placeholder:text-gray-400
+            text-gray-800
+            py-3
+            w-full
+            pl-3
+            mt-2
+          "
+          placeholder="Ml, AI, Software Engineering..."
+        />
+      </div>
+
       <div class="mt-8">
         <button
           role="button"
@@ -131,7 +156,6 @@ import {
   ListboxOptions,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
-import { ref } from "vue";
 export default {
   name: "NewIdea",
   components: {

@@ -21,7 +21,7 @@
             leave-to="translate-x-full"
           >
             <div class="w-screen max-w-lg z-100">
-              <form class="h-full flex flex-col bg-white shadow-xl">
+              <form class="h-full flex flex-col rounded-lg bg-white shadow-xl">
                 <div class="flex-1">
                   <EntryForm />
                 </div>
@@ -61,7 +61,30 @@
           >
             Supervisor's Section (Anik Sen)
           </p>
+
           <div>
+            <div class="float-left">
+              <input
+                id="first_name"
+                aria-labelledby="email"
+                type="text"
+                placeholder="Search group"
+                class="
+                  bg-gray-50
+                  border
+                  rounded
+                  text-xs
+                  font-medium
+                  leading-none
+                  placeholder:text-gray-800
+                  text-gray-800
+                  py-3
+                  w-96
+                  pl-3
+                
+                "
+              />
+            </div>
             <button
               class="
                 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600

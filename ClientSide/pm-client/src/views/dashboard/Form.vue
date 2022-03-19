@@ -43,27 +43,25 @@
         />
       </div>
 
-      <div class="mt-10" @click.prevent="addIDField(input, studentID)">
+      <div class="mt-10 pl-2" @click.prevent="addIDField(input, studentID)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+            clip-rule="evenodd"
           />
         </svg>
       </div>
 
-      <!-- <div class="mt-16" @click.prevent="removeField(input, inputs)">
+      <div class="mt-10 ml-4" @click.prevent="removeIDField(index, studentID)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -72,10 +70,10 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-      </div> -->
+      </div>
     </div>
 
     <div class="flex mt-5" v-for="(input, index) in studentEmail" :key="index">
@@ -107,10 +105,31 @@
         />
       </div>
 
-      <div class="mt-10" @click.prevent="addEmailField(input, studentEmail)">
+      <div
+        class="mt-10 pl-2"
+        @click.prevent="addEmailField(input, studentEmail)"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="mt-10 ml-4"
+        @click.prevent="removeIDField(index, studentEmail)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -119,7 +138,7 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
       </div>
@@ -159,12 +178,30 @@
       </div>
 
       <div
-        class="mt-10"
+        class="mt-10 pl-2"
         @click.prevent="addContactField(input, studentContact)"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="mt-10 ml-4"
+        @click.prevent="removeIDField(index, studentContact)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -173,19 +210,21 @@
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
       </div>
     </div>
 
-    <div class="mt-4">
-      <label for="tags" class="text-sm font-medium leading-none text-gray-800"
-        >Tags</label
+    <div class="pt-4">
+      <label for="email" class="text-sm font-medium leading-none text-gray-800"
+        >Student Batch</label
       >
       <input
-        id="tags"
+        id="first_name"
+        aria-labelledby="email"
         type="text"
+        placeholder="Batch No."
         class="
           bg-gray-50
           border
@@ -196,11 +235,10 @@
           placeholder:text-gray-400
           text-gray-800
           py-3
-          w-full
+          w-96
           pl-3
           mt-2
         "
-        placeholder="Ml, AI, Software Engineering..."
       />
     </div>
 
@@ -243,6 +281,7 @@ export default {
       fieldType.push({ value: "" });
     },
     removeIDField(index, fieldType) {
+      console.log(index, fieldType);
       fieldType.splice(index, 1);
     },
     addEmailField(value, fieldType) {

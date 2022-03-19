@@ -38,7 +38,7 @@
             ></textarea>
           </div>
 
-          <!-- <button
+           <button
             class="
               mt-2
               bg-transparent
@@ -53,8 +53,8 @@
               rounded
             "
           >
-            Assign
-          </button> -->
+            Submit
+          </button> 
 
           <div class="pt-10">
             <div class="flex" v-for="n in 3" :key="n">
@@ -85,17 +85,17 @@
                       class="w-5 h-5 text-purple-500"
                     />
                   </DisclosureButton>
-                  <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
+                  <DisclosurePanel class="px-4 pt-4 pb-2 w-9/12 text-sm text-gray-500">
                     If you're unhappy with your purchase for any reason, email
                     us within 90 days and we'll refund you in full, no questions
-                    asked.
+                    asked. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam illum natus beatae ullam deleniti pariatur odio assumenda error atque dignissimos?
                   </DisclosurePanel>
                 </Disclosure>
               </div>
-
-              <!-- <button
+<!-- 
+               <button
                 class="
-                  flex-no-shrink
+                 
                   p-2
                   ml-4
                   mr-2
@@ -119,7 +119,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </button> -->
+              </button>  -->
               <!-- <button
                 class="flex-no-shrink p-2 ml-2 rounded-lg hover:bg-gray-50"
               >
@@ -135,7 +135,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </button> -->
+              </button>  -->
             </div>
           </div>
         </div>

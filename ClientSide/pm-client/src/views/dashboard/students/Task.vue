@@ -47,7 +47,7 @@
                 dark:text-gray-100
               "
             >
-              <p class="text-sm">{{ card.date }}</p>
+              <p class="text-sm">{{ card.date }} </p>
               <div
                 class="
                   w-8

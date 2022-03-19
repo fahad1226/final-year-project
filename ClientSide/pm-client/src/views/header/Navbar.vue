@@ -1,4 +1,37 @@
 <template>
+  <TransitionRoot as="template" :show="open" class="bg-gray-900 bg-opacity-50">
+    <Dialog
+      as="div"
+      static
+      class="fixed inset-0 overflow-hidden"
+      @close="open = false"
+      :open="open"
+    >
+      <div class="absolute inset-0 overflow-hidden">
+        <DialogOverlay class="absolute inset-0" />
+
+        <div class="fixed inset-y-0 top-6 bottom-14 right-0 max-w-full flex">
+          <TransitionChild
+            as="template"
+            enter="transform transition ease-in-out duration-500 sm:duration-700"
+            enter-from="translate-x-full"
+            enter-to="translate-x-0"
+            leave="transform transition ease-in-out duration-500 sm:duration-700"
+            leave-from="translate-x-0"
+            leave-to="translate-x-full"
+          >
+            <div class="w-screen max-w-lg z-100">
+              <form class="h-full flex flex-col bg-white shadow-xl">
+                <div class="flex-1">
+                  <Notifications />
+                </div>
+              </form>
+            </div>
+          </TransitionChild>
+        </div>
+      </div>
+    </Dialog>
+  </TransitionRoot>
   <nav class="bg-white shadow">
     <div class="mx-auto container px-6 py-2 xl:py-0">
       <div class="flex items-center justify-between">
@@ -111,6 +144,40 @@
                       />
                     </svg>
                     <span class="ml-2 font-bold">Your Section</span>
+                  </div>
+                </li>
+
+                <li
+                  class="
+                    xl:hidden
+                    flex-col
+                    cursor-pointer
+                    text-gray-600 text-sm
+                    leading-3
+                    tracking-normal
+                    py-2
+                    hover:text-indigo-700
+                    focus:text-indigo-700 focus:outline-none
+                    flex
+                    justify-center
+                  "
+                >
+                  <div class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                      />
+                    </svg>
+                    <span class="ml-2 font-bold"></span>
                   </div>
                 </li>
 
@@ -371,27 +438,33 @@
               Your Section
             </router-link>
           </div>
+          <div
+            class="
+              cursor-pointer
+              flex
+              space-x-2
+              justify-center
+              items-center
+              mr-11
+            "
+            @click="open = true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+              />
+            </svg>
+          </div>
           <div class="hidden xl:flex items-center">
-            <!-- <div class="relative md:mr-6 my-2">
-              <button
-                class="
-                  focus:outline-none
-                  bg-gray-100
-                  border-gray-300 border
-                  transition
-                  duration-150
-                  ease-in-out
-                  hover:bg-gray-300
-                  rounded
-                  text-gray-600
-                  px-5
-                  py-2
-                  text-xs
-                "
-              >
-                Manage
-              </button>
-            </div> -->
             <div class="ml-6 relative">
               <div
                 class="flex items-center relative"
@@ -443,41 +516,7 @@
                       <span class="ml-2">My Profile</span>
                     </div>
                   </li>
-                  <li
-                    class="
-                      cursor-pointer
-                      text-gray-600 text-sm
-                      leading-3
-                      tracking-normal
-                      mt-2
-                      py-2
-                      hover:text-indigo-700
-                      focus:text-indigo-700 focus:outline-none
-                      flex
-                      items-center
-                    "
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="icon icon-tabler icon-tabler-help"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <circle cx="12" cy="12" r="9" />
-                      <line x1="12" y1="17" x2="12" y2="17.01" />
-                      <path
-                        d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"
-                      />
-                    </svg>
-                    <span class="ml-2">Help Center</span>
-                  </li>
+
                   <li
                     class="
                       cursor-pointer
@@ -562,12 +601,38 @@
 </template>
 
 <script>
+import Notifications from "../shared/Notifications.vue";
+import {
+  Dialog,
+  DialogOverlay,
+  DialogTitle,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  TransitionChild,
+  TransitionRoot,
+} from "@headlessui/vue";
 export default {
   name: "LightWithButton",
+  components: {
+    Notifications,
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    TransitionChild,
+    TransitionRoot,
+  },
   data() {
     return {
       profilePhoto:
         "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      open: false,
+      show: null,
     };
   },
   methods: {
