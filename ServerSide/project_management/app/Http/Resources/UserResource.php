@@ -19,7 +19,9 @@ class UserResource extends JsonResource
             'Email'     =>$this->email,
             'Phone'     =>$this->phone,
             'Student_id'=>$this->uid?$this->uid:'N\A',
-            'Notification'=>$this->notifications,
+            'Notification'=>NotificationResource::collection($this->notifications),
+            'Role'      =>$this->role,
+            // 'Unread'      => $this->notifications()->unread() 
         ];
     }
 }

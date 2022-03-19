@@ -73,4 +73,8 @@ class UserController extends Controller
        // dd($users);
         return view('dashboard.user.student',compact('users'));
     }
+    public function clearNotification()
+    {
+        auth()->user()->notifications()->delete();
+    }
 }
