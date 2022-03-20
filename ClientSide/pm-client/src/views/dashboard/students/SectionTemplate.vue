@@ -27,7 +27,7 @@
             >
               <div class="w-screen max-w-lg z-100">
                 <form
-                  class="h-full flex flex-col rounded-lg bg-white shadow-xl"
+                  class="h-full flex flex-col overflow-y-auto rounded-lg bg-white shadow-xl"
                 >
                   <div class="flex-1">
                     <NewIdea />
@@ -39,7 +39,7 @@
         </div>
       </Dialog>
     </TransitionRoot>
-    <div class="container mx-auto">
+    <div class="flex pl-8">
       <div class="top-0 right-0 pt-10 md:mr-24">
         <button
           @click="open = true"
@@ -58,6 +58,24 @@
         >
           Submit a New Idea
         </button>
+        <button
+          @click="this.$router.push('/submitted-ideas')"
+          class="
+            ml-6
+            bg-green-500
+            hover:bg-green-600
+            text-white
+            font-semibold
+            hover:text-white
+            py-2
+            px-4
+            border border-gray-500
+            hover:border-transparent
+            rounded
+          "
+        >
+          Submitted Ideas
+        </button>
       </div>
     </div>
     <h2 class="text-center text-4xl text-amber-400 font-mono pt-2">
@@ -69,12 +87,6 @@
     <div class="grid grid-rows-1 pt-4">
       <div class="grid grid-cols-3 gap-5">
         <div class="col-start-1 col-span-2">
-          <h3 class="font-serif pl-6 text-3xl">
-            Submitted
-            <span class="text-red-400">projects</span>
-            list
-          </h3>
-
           <div>
             <h2 class="text-center text-2xl">Task Assigned</h2>
             <Task />

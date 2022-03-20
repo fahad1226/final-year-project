@@ -21,7 +21,7 @@
             leave-to="translate-x-full"
           >
             <div class="w-screen max-w-lg z-100">
-              <form class="h-full flex flex-col rounded-lg bg-white shadow-xl">
+              <form class="h-full flex flex-col overflow-y-auto rounded-lg bg-white shadow-xl">
                 <div class="flex-1">
                   <EntryForm />
                 </div>

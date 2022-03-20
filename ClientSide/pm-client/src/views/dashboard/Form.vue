@@ -24,6 +24,7 @@
         <input
           id="first_name"
           aria-labelledby="email"
+          v-model="studentID[index].ID"
           type="text"
           placeholder="Student ID"
           class="
@@ -86,6 +87,7 @@
         <input
           id="first_name"
           aria-labelledby="email"
+          v-model="studentEmail[index].email"
           type="email"
           placeholder="Student Email"
           class="
@@ -158,7 +160,8 @@
         <input
           id="first_name"
           aria-labelledby="email"
-          type="text"
+          v-model="studentContact[index].contact"
+          type="number"
           placeholder="Students Contact Number"
           class="
             bg-gray-50
@@ -244,6 +247,7 @@
 
     <div class="mt-8">
       <button
+        @click.prevent="enterNewGroup"
         role="button"
         class="
           focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700
@@ -267,28 +271,47 @@
 </template>
 
 <script>
+import teacherService from "@/config/services/teacherService";
 export default {
   name: "EntryForm",
   data() {
     return {
-      studentID: [{ id: "" }],
+      studentID: [{ ID: "" }],
       studentEmail: [{ email: "" }],
       studentContact: [{ contact: "" }],
     };
   },
   methods: {
     addIDField(value, fieldType) {
-      fieldType.push({ value: "" });
+      fieldType.push({ ID: "" });
     },
     removeIDField(index, fieldType) {
       console.log(index, fieldType);
       fieldType.splice(index, 1);
     },
     addEmailField(value, fieldType) {
-      fieldType.push({ value: "" });
+      fieldType.push({ email: "" });
     },
     addContactField(value, fieldType) {
-      fieldType.push({ value: "" });
+      fieldType.push({ contact: "" });
+    },
+
+    // event method to trigger while button click
+
+    async enterNewGroup() {
+      let studentID = JSON.parse(JSON.stringify(this.studentID));
+      let studentEmail = JSON.parse(JSON.stringify(this.studentEmail));
+      let studentContact = JSON.parse(JSON.stringify(this.studentContact));
+      const response = await teacherService.postNewGroup({
+        studentID: studentID,
+        studentEmail: studentEmail,
+        studentContact: studentContact,
+        batch: "31",
+      });
+      console.log("response is", response.data);
+      console.log(studentID);
+      console.log(studentEmail);
+      console.log(studentContact);
     },
   },
 };
