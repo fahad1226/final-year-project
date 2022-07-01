@@ -38,5 +38,6 @@ Route::middleware('apiRules')->group(function () {
         Route::post('project/user/comment',[ProjectController::class,'comment']);
         Route::apiResource('supervisor-project',SupervisorProjectController::class);
         Route::apiResource('assignment',AssignmentController::class);
+        Route::get('clear-notification',[UserController::class,'clearNotification']);
     });
 });
